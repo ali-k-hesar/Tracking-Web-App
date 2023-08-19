@@ -1,2 +1,14 @@
-opencv-contrib-python
+# BG removal
+-f https://download.pytorch.org/whl/cu117/torch_stable.html
+torch
+torchvision
+ultralytics
 
+# Other
+fastapi
+uvicorn
+numpy
+opencv-contrib-python
+mediapipe
+greenlet
+jinja2

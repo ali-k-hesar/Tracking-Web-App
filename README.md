@@ -1,4 +1,4 @@
-# Tracking Web-App - Computer Vision Web Application
+# Tracking Web-App - Computer Vision Web Application (No Docker Version)
 
 <!-- <div align="center">
   <p>
@@ -7,7 +7,7 @@
 </div>
  -->
 
-This project is a web application that utilizes computer vision techniques to perform various tasks using AI models. The application allows users to easily track faces, hands, body poses, and perform background removal on images. Users can access these features with a click of a button inside the web app. The AI models are implemented in Python using mediapipe, open-cv, and PyTorch. The models are served through an API built with FastAPI and run using uvicorn. The frontend is created using HTML, CSS, and JavaScript to interact with the web app. The project is also dockerized for easy deployment.
+This branch of the project allows you to run the Computer Vision Web-App without using Docker. You can set up and run the application using Uvicorn and the required Python dependencies. The application utilizes computer vision techniques to perform various tasks using AI models. It allows users to track faces, hands, body poses, and perform background removal on images.
 
 ## Features
 
@@ -32,8 +32,7 @@ This project is a web application that utilizes computer vision techniques to pe
 #### 1. Clone this repository:
 
 ```shell
-git clone https://github.com/ali-k-hesar/Tracking-Web-App.git
-
+git clone -b no-docker https://github.com/ali-k-hesar/Tracking-Web-App.git
 ```
 
 #### 2. Navigate to the project directory:
@@ -42,16 +41,16 @@ git clone https://github.com/ali-k-hesar/Tracking-Web-App.git
 cd Tracking-Web-App
 ```
 
-#### 3. Build the Docker image
+#### 3. Install the required Python dependencies:
 
 ```shell
-docker build -t tracking-web-app .
+pip install -r requirements.txt
 ```
 
-#### 4. Run the Docker container:
+#### 4. Run the application using Uvicorn:
 
 ```shell
-docker run -p 8000:8000 your-app-name
+uvicorn main:app --host 127.0.0.1 --port 8000
 ```
 
 #### 5. Access the application in your browser at http://localhost:8000.
