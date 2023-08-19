@@ -44,7 +44,7 @@ git clone https://github.com/ali-k-hesar/Tracking-Web-App.git
 cd Tracking-Web-App
 ```
 
-#### 3. Build the Docker image
+#### 3. Build the Docker image:
 
 ```shell
 docker build -t tracking-web-app .
@@ -53,8 +53,12 @@ docker build -t tracking-web-app .
 #### 4. Run the Docker container:
 
 ```shell
-docker run -p 8000:8000 your-app-name
+docker run --device=/dev/video0:/dev/video0 -p 8000:8000 tracking-web-app
 ```
+
+Remember that granting device access to containers can have security implications, so be cautious when using this approach. If you're concerned about security, you might consider using the **--privileged** flag, but this gives the container elevated privileges and should be used carefully.
+
+If you get the error **"Could not start camera."**, Keep in mind that the exact steps to connect docker container to your webcam might vary based on your specific Docker setup, Linux distribution, and webcam model. Always refer to the official Docker documentation and your distribution's documentation for any additional details or potential changes in the process.
 
 #### 5. Access the application in your browser at http://localhost:8000.
 
