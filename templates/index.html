@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tracking Web-App</title>
+<style>
+  @font-face {
+    font-family: 'Calibri Bold';
+    src: url('/fonts/calibri-bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Calibri Regular';
+    src: url('/fonts/calibri-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+  .header {
+    font-size: 40px;
+    color: purple;
+    margin-bottom: 2px;
+    font-family: 'Calibri Bold', sans-serif;
+  }
+  .sub-header {
+    font-size: 20px;
+    color: blue;
+    margin-bottom: 20px;
+    font-family: 'Calibri regular', sans-serif;
+  }
+  #video-container {
+    position: relative;
+  }
+  #video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+  .button {
+    background-color: purple;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 7px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 10px;
+    font-family: 'Calibri Regular', sans-serif;
+    font-weight: medium;
+    font-size: 16px;
+    width: 150px;
+    border: 1px solid black;
+  }
+  .button:hover {
+    background-color: black;
+  }
+  .active-button {
+    background-color: blue;
+  }
+</style>
+</head>
+<body>
+  <div class="header">{{ app_title }}</div>
+  <div class="sub-header">{{ app_description }}</div>
+  <div id="video-container">
+    <img id="video" src="" alt="Video Feed">
+    <div class="button-container">
+      <button id="face-button" class="button">face-tracking</button>
+      <button id="hand-button" class="button">hand-tracking</button>
+      <button id="pose-button" class="button">pose-tracking</button>
+      <button id="bg-button" class="button">bg-removal</button>
+    </div>
+  </div>
+
+  <script>
+    const video = document.getElementById('video');
+    const faceButton = document.getElementById('face-button');
+    const handButton = document.getElementById('hand-button');
+    const poseButton = document.getElementById('pose-button');
+    const bgButton = document.getElementById('bg-button');
+  
+    const buttons = [faceButton, handButton, poseButton, bgButton];
+  
+    let currentTrackType = 'face';
+  
+    async function updateVideoFeed(trackType) {
+      currentTrackType = trackType;
+      video.src = `http://localhost:8000/video_feed?track_type=${trackType}`;
+      video.onload = () => {
+        buttons.forEach(button => button.classList.remove('active-button'));
+        const activeButton = document.getElementById(`${trackType}-button`);
+        activeButton.classList.add('active-button');
+      };
+    }
+  
+    faceButton.addEventListener('click', () => {
+      updateVideoFeed('face');
+    });
+  
+    handButton.addEventListener('click', () => {
+      updateVideoFeed('hand');
+    });
+  
+    poseButton.addEventListener('click', () => {
+      updateVideoFeed('pose');
+    });
+
+    bgButton.addEventListener('click', () => {
+      updateVideoFeed('bg');
+    });
+  
+    // Initial load with face-tracking
+    updateVideoFeed(currentTrackType);
+  </script>
+</body>
+</html>
