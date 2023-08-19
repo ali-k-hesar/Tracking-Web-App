@@ -32,14 +32,14 @@ This project is a web application that utilizes computer vision techniques to pe
 #### 1. Clone this repository:
 
 ```shell
-git clone https://github.com/your-username/tracking-web-app.git
+git clone https://github.com/ali-k-hesar/Tracking-Web-App.git
 
 ```
 
 #### 2. Navigate to the project directory:
 
 ```shell
-cd tracking-web-app
+cd Tracking-Web-App
 ```
 
 #### 3. Build the Docker image
