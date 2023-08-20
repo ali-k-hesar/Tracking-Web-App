@@ -1,11 +1,10 @@
 # Tracking Web-App - Computer Vision Web Application
 
-<!-- <div align="center">
+<div align="center">
   <p>
     <img width="100%" src="https://github.com/ali-k-hesar/pixel-shuffle-using-hand-tracking/assets/85279433/273d59f3-2fa8-47c1-a951-2af9251345e8"></a>
   </p>
 </div>
- -->
 
 This project is a web application that utilizes computer vision techniques to perform various tasks using AI models. The application allows users to easily track faces, hands, body poses, and perform background removal on images. Users can access these features with a click of a button inside the web app. The AI models are implemented in Python using mediapipe, open-cv, and PyTorch. The models are served through an API built with FastAPI and run using uvicorn. The frontend is created using HTML, CSS, and JavaScript to interact with the web app. The project is also dockerized for easy deployment.
 
