@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-import torch
 import mediapipe as mp
 import numpy as np
 import cv2
