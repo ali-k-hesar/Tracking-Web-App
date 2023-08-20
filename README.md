@@ -1,11 +1,10 @@
 # Tracking Web-App - Computer Vision Web Application (No Docker Version)
 
-<!-- <div align="center">
+<div align="center">
   <p>
-    <img width="100%" src="https://github.com/ali-k-hesar/pixel-shuffle-using-hand-tracking/assets/85279433/273d59f3-2fa8-47c1-a951-2af9251345e8"></a>
+    <img width="100%" src="https://github.com/ali-k-hesar/Tracking-Web-App/assets/85279433/8ba2b6f0-4dec-4e20-bc98-f05b49505d7e"></a>
   </p>
 </div>
- -->
 
 This branch of the project allows you to run the Computer Vision Web-App without using Docker. You can set up and run the application using Uvicorn and the required Python dependencies. The application utilizes computer vision techniques to perform various tasks using AI models. It allows users to track faces, hands, body poses, and perform background removal on images.
 
