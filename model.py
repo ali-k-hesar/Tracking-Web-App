@@ -6,9 +6,6 @@ import cv2
 from ultralytics import YOLO
 
 
-transform = lambda x: (torch.from_numpy(x).permute(2, 0, 1) / 255).float()[None, ...]
-
-
 @dataclass
 class TrackModel:
     model_type: str = 'face'  # Choose among [face, hand, pose, bg]
