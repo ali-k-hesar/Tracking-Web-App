@@ -2,7 +2,7 @@
 
 <div align="center">
   <p>
-    <img width="100%" src="https://github.com/ali-k-hesar/pixel-shuffle-using-hand-tracking/assets/85279433/273d59f3-2fa8-47c1-a951-2af9251345e8"></a>
+    <img width="100%" src="https://github.com/ali-k-hesar/Tracking-Web-App/assets/85279433/8ba2b6f0-4dec-4e20-bc98-f05b49505d7e"></a>
   </p>
 </div>
 
