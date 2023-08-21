@@ -1,12 +1,8 @@
 from dataclasses import dataclass
-import torch
 import mediapipe as mp
 import numpy as np
 import cv2
 from ultralytics import YOLO
-
-
-transform = lambda x: (torch.from_numpy(x).permute(2, 0, 1) / 255).float()[None, ...]
 
 
 @dataclass
