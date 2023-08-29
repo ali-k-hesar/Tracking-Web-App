@@ -4,11 +4,11 @@ FROM python:3.9-slim
 RUN python -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 
-# Set working directory
-WORKDIR /app
-
 # Copy your application code
 COPY . /app/
+
+# Set working directory
+WORKDIR /app
 
 # Install dependencies inside the virtual environment
 RUN apt-get update &&\
